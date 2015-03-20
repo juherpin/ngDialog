@@ -28,8 +28,10 @@
 	var focusableElementSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]';
 	var reqAnimationFrame = window.requestAnimationFrame ||
 		window.webkitRequestAnimationFrame ||
-		window.mozRequestAnimationFrame    ||
-		function( callback ){
+		window.mozRequestAnimationFrame ||
+		window.oRequestAnimationFrame ||
+		window.msRequestAnimationFrame ||
+		function(callback) {
 			window.setTimeout(callback, 1000 / 60);
 		};
 	var forceBodyReload = false;
